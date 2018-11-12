@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:app="http://schemas.android.com/apk/res-auto"
+       xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+<data class="ReleasesBinding">
+    <variable
+        name="releasesmodel"
+        type="newapp.koteswara.com.newapp.viewmodel.ReleasesViewModel"></variable>
+</data>
+<android.support.v7.widget.CardView
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/layout_active_release_status"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".02"
+            android:background="@color/j_authetic"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".88"
+            android:orientation="vertical"
+            android:padding="@dimen/card_view_padding">
+
+            <TextView
+                android:id="@+id/text_active_release_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/card_view_heading_marin_bottom"
+                android:text="@{releasesmodel.release}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/card_view_heading"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/card_view_text_marin_bottom">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight=".45"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/text_overall_pass_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/right_image_margin"
+                        android:text="@string/overall_pass"
+                        android:textColor="@color/jumbo"
+                        android:textSize="@dimen/card_view_sub_heading" />
+
+                    <TextView
+                        android:id="@+id/text_overall_pass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/right_image_margin"
+                        android:text="@{releasesmodel.overallpass}"
+                        android:textColor="@color/monsoon"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/card_view_heading" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight=".45"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/text_first_pass_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/right_image_margin"
+                        android:text="@string/first_pass"
+                        android:textColor="@color/jumbo"
+                        android:textSize="@dimen/card_view_sub_heading" />
+
+                    <TextView
+                        android:id="@+id/text_first_pass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/right_image_margin"
+                        android:text="@{releasesmodel.firstrunpass}"
+                        android:textColor="@color/monsoon"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/card_view_heading" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight=".3"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/text_open_blocker_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/right_image_margin"
+                        android:text="@string/open_blocker"
+                        android:textColor="@color/jumbo"
+                        android:textSize="@dimen/card_view_sub_heading" />
+
+                    <TextView
+                        android:id="@+id/text_open_blocker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/right_image_margin"
+                        android:text="@{releasesmodel.blocker}"
+                        android:textColor="@color/monsoon"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/card_view_heading" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
+</layout>
